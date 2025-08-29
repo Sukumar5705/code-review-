@@ -1,0 +1,112 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  gap: 1rem;
+  display: flex;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+}
+
+main .left {
+  background-color: rgb(3, 3, 3);
+  border-radius: 0.7rem;
+  position: relative;
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin-top: 0;
+  border-radius: 0.7rem;
+}
+
+main .left .review-button {
+  background-color: rgb(164, 194, 205);
+  color: rgb(7, 8, 7);
+  bottom: 1rem;
+  right: 1rem;
+  position: absolute;
+  padding: 0.6rem 2rem;
+  border-radius: 0.7rem;
+  font-weight: 600;
+  user-select: none;
+  cursor: pointer;
+}
+
+main .left .review-button.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid rgb(164, 194, 205);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+main .right {
+  background-color: rgb(26, 26, 26);
+  border-radius: 0.7rem;
+  padding: 1rem 1.5rem;
+  overflow: auto;
+  font-size: medium;
+}
+
+main .right > * {
+  margin-bottom: 1.5rem; /* Space between output parts */
+}
+
+main .right > *:last-child {
+  margin-bottom: 0; /* Remove margin from the last element */
+}
+
+main .right ul {
+  padding-left: 1.5rem; /* Ensure proper indentation for lists */
+}
+
+main .right ul li {
+  margin-bottom: 0.5rem; /* Space between list items */
+}
+
+main .right ul li:last-child {
+  margin-bottom: 0; /* Remove margin from the last list item */
+}
